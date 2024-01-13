@@ -22,22 +22,6 @@ Follow these steps after booting the machine from the Arch Linux ISO:
 4. Create EFI system partition (ESP) with at least 300 MiB.
 5. Use the remaining space of the device for the Linux filesystem (root) partition.
 
-### Format the partitions
-
-1. Format Linux ESP: `mkfs.vfat LINUX_PARTITION_DEVICE`
-2. Format root partition: `mkfs.ext4 ROOT_PARTITION_DEVICE`
-
-### Mount the file systems
-
-1. Mount the root partition: `mount ROOT_PARTITION_DEVICE /mnt`
-2. Mount Linux ESP
-   1. `mkdir -p /mnt/boot/arch-efi`
-   2. `mount LINUX_ESP_DEVICE /mnt/boot/arch-efi`
-3. Mount for Windows ESP:
-   1. `mkdir -p /mnt/boot/win10-efi`
-   2. `mount WINDOWS_ESP_DEVICE /mnt/boot/win10-efi`
-4. Install packages for mounting NTFS partitions: `pacman -S ntfs-3g mtools dosfstools`
-
 ## Installation
 
 ### Download the script
